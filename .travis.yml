@@ -12,6 +12,17 @@ matrix:
         # - psql -c ./src/main/resources/TestDB.sql -U postgres
       after_success:
         - mvn clean cobertura:cobertura coveralls:report
+  include:
+    - language: node_js
+      node_js:
+        - '8'
+        - '7'
+        - '6'
+      before_script:
+        - cd react-web-app
+        - npm install
+      after_success:
+        - npm run coveralls
   # include:
   #   - language: android
   #     jdk:
