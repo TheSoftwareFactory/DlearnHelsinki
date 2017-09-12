@@ -7,10 +7,15 @@
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13"
   },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "nyc": "^8.3.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
     "eject": "react-scripts eject"
   }
 }
