@@ -23,18 +23,3 @@ matrix:
         - npm install
       after_success:
         - npm run coveralls
-  # include:
-  #   - language: android
-  #     jdk:
-  #       - openjdk8
-  #       - oraclejdk8
-  #     android:
-  #       components:
-  #         - tools
-  #         - android-25
-  #         - build-tools-25.0.3
-  #     before_script:
-  #       - cd nativeScriptApp
-  #     script:
-  # TODO: How to build and run NativeScript tests
-  #       - ./gradlew build connectedCheck
