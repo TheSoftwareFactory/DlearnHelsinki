@@ -8,14 +8,13 @@
     "react-scripts": "1.0.13"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
-    "nyc": "^8.3.2"
+    "coveralls": "^2.11.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --env=jsdom",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "eject": "react-scripts eject"
   }
 }
