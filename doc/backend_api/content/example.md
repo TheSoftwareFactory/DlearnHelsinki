@@ -1,34 +1,20 @@
-## Wobble
+## Dlearn
 
-This is our high-quality wobbles API. You can use this API to request
-and remove different wobbles at a low wibble price.
+This is our high-quality API. You can use this API to request
+and remove different students and spidergraphs.
 
-### List wobbles
+### List students
 
-Lists all wobbles for a particular account.
+Lists all students available.
 
 ```endpoint
-GET /wobbles/v1/{username} wobbles:read
+GET /students/
 ```
 
 #### Example request
 
 ```curl
-$ curl https://wobble.biz/wobbles/v1/{username}
-```
-
-```bash
-$ wbl wobbles list
-```
-
-```javascript
-client.listWobbles(function(err, wobbles) {
-  console.log(wobbles);
-});
-```
-
-```python
-wobbles.list()
+$ curl localhost:8080/skeleton/webapi/students/
 ```
 
 #### Example response
@@ -36,108 +22,62 @@ wobbles.list()
 ```json
 [
   {
-    "owner": "{username}",
-    "id": "{wobble_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
+    "_id": {student_id},
+    "lastname": "{lastname}",
+    "firstname": "{firstname}",
+    "username": "{username}",
+    "password" : "password"
   },
   {
-    "owner": "{username}",
-    "id": "{wobble_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
+    "_id": {student_id},
+    "lastname": "{lastname}",
+    "firstname": "{firstname}",
+    "username": "{username}",
+    "password" : "password"
   }
 ]
 ```
 
-### Create wobble
+### List individual students
 
-Creates a new, empty wobble.
+This is how you can get a specific student by their id.
 
 ```endpoint
-POST /wobbles/v1/{username}
+GET /students/1
 ```
 
 #### Example request
 
 ```curl
-curl -X POST https://wobble.biz/wobbles/v1/{username}
+$ curl localhost:8080/skeleton/webapi/students/1
 ```
-
-```bash
-$ wbl wobbles create
-```
-
-```javascript
-client.createWobble({
-  name: 'example',
-  description: 'An example wobble'
-}, function(err, wobble) {
-  console.log(wobble);
-});
-```
-
-```python
-response = wobbles.create(
-  name='example', description='An example wobble')
-```
-
-#### Example request body
-
-```json
-{
-  "name": "foo",
-  "description": "bar"
-}
-```
-
-Property | Description
----|---
-`name` | (optional) the name of the wobble
-`description` | (optional) a description of the wobble
 
 #### Example response
 
 ```json
 {
-  "owner": "{username}",
-  "id": "{wobble_id}",
-  "name": null,
-  "description": null,
-  "created": "{timestamp}",
-  "modified": "{timestamp}"
+  "_id": {student_id},
+  "lastname": "{lastname}",
+  "firstname": "{firstname}",
+  "username": "{username}",
+  "password" : "password"
 }
 ```
 
-### Retrieve a wobble
+### Retrieve a student's spidergraph
 
-Returns a single wobble.
+Returns a single spidergraph.
 
 ```endpoint
-GET /wobbles/v1/{username}/{wobble_id}
+GET /students/1/spidergraphs/1
 ```
 
-Retrieve information about an existing wobble.
+Retrieve information about an existing spidegraph.
 
 #### Example request
 
 ```curl
-curl https://wobble.biz/wobbles/v1/{username}/{wobble_id}
-```
-
-```bash
-$ wbl wobble read-wobble wobble-id
-```
-
-```python
-attrs = wobbles.read_wobble(wobble_id).json()
-```
-
-```javascript
-client.readWobble('wobble-id',
-  function(err, wobble) {
-    console.log(wobble);
-  });
+curl localhost:8080/skeleton/webapi/students/1/spidergraphics/1
 ```
 
 #### Example response
