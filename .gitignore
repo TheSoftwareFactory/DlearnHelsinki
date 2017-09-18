@@ -26,7 +26,6 @@ buildNumber.properties
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 *.zip
@@ -96,3 +95,4 @@ nbactions.xml
 
 # NodeJS specific
 node_modules
+package-lock.json
