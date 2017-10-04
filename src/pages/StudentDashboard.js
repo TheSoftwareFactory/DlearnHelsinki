@@ -17,6 +17,18 @@ startSurvey = (e) => {
 //        return <Redirect to="/student-survey"/>; //THIS DOESN'T WORK
 }
 
+
+	constructor(props) {
+		super(props);
+
+	}
+
+	componentDidMount() {
+		//call for survey open 
+		
+	}
+
+
 	render() {
 // DO NOT put margins into buttons in CSS! 
 // They may not be applied correctly during rendering.
