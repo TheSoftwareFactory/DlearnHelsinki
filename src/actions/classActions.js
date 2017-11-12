@@ -1,13 +1,14 @@
+import { CLASS_ACTION_TYPES as types } from '../constants'
+
 export function setClasses(classes) {
     return {
-	type: "SET_CLASSES",
-	payload: classes,
+		type: types.SET_CLASSES,
+		payload: classes,
     }
 }
 
 export function deleteClasses() {
     return {
-	type: "DELETE_CLASSES",
-	payload: null,
+		type: types.DELETE_CLASSES,
     }
 }
